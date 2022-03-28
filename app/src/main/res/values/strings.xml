@@ -1,0 +1,311 @@
+<resources>
+    <string name="app_name">CashRegister</string>
+    <string name="main_menu_header">Cash Register</string>
+    <string name="main_menu_bind_terminal">Bind terminal</string>
+    <string name="main_menu_do_payment">Make payment</string>
+
+    <string name="clear">clear</string>
+    <string name="del">del</string>
+    <string name="pay">validate</string>
+    <string name="exit">Exit</string>
+    <string name="no_ticket">\nPayment not completed\nCard not read</string>
+    <string name="send_sms_ticket">SMS</string>
+    <string name="send_email_ticket">Email</string>
+    <string name="print_client_ticket">Printing\nClient</string>
+    <string name="print_company_ticket">Printing\nMerchant</string>
+    <string name="new_payment">New payment</string>
+    <string name="debit">Debit</string>
+    <string name="credit">Credit</string>
+    <string name="reversal">Reversal</string>
+    <string name="transaction_type">Debit</string>
+    <string name="pref_file_name">macewindu_pref_file</string>
+    <string name="payment">Payment</string>
+    <string name="reseau">Network</string>
+    <string name="terminal">Terminal and networks</string>
+    <string name="payment_and_print">Payment and Print</string>
+    <string name="fonctionnel">Functionality</string>
+    <string name="divers">Miscellaneous</string>
+    <string name="settings">Settings</string>
+    <string name="reprint">Reprint</string>
+    <string name="prepay">Prepayment</string>
+    <string name="start_day">Start of the day</string>
+    <string name="print_option">Printing by default on success</string>
+    <string name="print_option_fail">Default printing on failure</string>
+    <string name="print_option_none">None</string>
+    <string name="print_option_client">Client Only</string>
+    <string name="print_option_merchant">Merchant Only</string>
+    <string name="print_option_client_merchant">Client then Merchant</string>
+    <string name="print_option_merchant_client">Merchant then Client</string>
+
+    <string name="footer_text">Print text after ticket</string>
+    <string name="footer_default_text">Made on a YAVIN POS</string>
+    <string name="sound_option_pos">Sound on payment success</string>
+
+    <string name="ok">OK</string>
+    <string name="ko">Error</string>
+    <string name="sign">Signature</string>
+    <string name="terminal_not_initialized">Terminal is not initialized</string>
+
+    <string name="wifi">Wi-Fi</string>
+    <string name="data">Network and mobile data</string>
+    <string name="light">Brightness and Sleep</string>
+    <string name="sound">Sounds and Notifications</string>
+    <string name="datetime">Date and Time</string>
+    <string name="help">Assistance</string>
+    <string name="help_text">Monday to Friday 9:30a.m - 6p.m\n the Yavin team is at your side\n to cash in with confidence</string>
+    <string name="email_contact">contact@yavin.com</string>
+    <string name="phone_contact">+33 1 84 88 45 59</string>
+    <string name="contact_us">Contact us</string>
+    <string name="network_down">Network search\n is in progress</string>
+    <string name="network_down_wifi">Connect Wi-Fi</string>
+    <string name="send">Send</string>
+    <string name="email_hint">leia@yavin.com</string>
+    <string name="phone_hint">06 11 22 33 44</string>
+    <string name="send_by_email">Send by e-mail</string>
+    <string name="send_by_sms">Send by SMS</string>
+    <string name="cancel">Cancel</string>
+    <string name="send_notif">Send</string>
+    <string name="send_notif_error">Error sending</string>
+    <string name="restoflash">Restoflash</string>
+    <string name="restoflash_scan_qr">Scan the QR code</string>
+    <string name="restoflash_enter_code">Code restoflash</string>
+    <string name="validate">validate</string>
+    <string name="restoflash_enter_amount">Amount in Euro</string>
+    <string name="restoflash_waiting">Awaiting confirmation from Restoflash</string>
+    <string name="print">Print</string>
+    <string name="history">History</string>
+    <string name="history_date">opening date -> closing date</string>
+    <string name="history_date_simple">Monday January 25</string>
+    <string name="history_detail">Total of the day</string>
+    <string name="password">Password</string>
+    <string name="email">E-mail address</string>
+    <string name="login">Se connecter</string>
+    <string name="continuer">Continue</string>
+    <string name="retour">Return</string>
+    <string name="email_invalide">Invalid Email</string>
+    <string name="forgot_password">Forgot your password?</string>
+    <string name="network_missing">Network search in progress …\nConnect Wi-Fi?</string>
+    <string name="logout">Sign out</string>
+    <string name="total">Total</string>
+    <string name="personalise_text">Personalize</string>
+    <string name="select_date">Choose date</string>
+    <string name="select_time">Choose time</string>
+    <string name="textView_min_datetime">Start</string>
+    <string name="textView_max_datetime">End</string>
+    <string name="confirm_filter">Confirm</string>
+    <string name="sync_server">Synchronize with Yavin server</string>
+
+    // gotify resources
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="found_gotify_version">Found Yavin Notif v%s</string>
+    <string name="version_failed_status_code">Request to \'%s\' failed with status code %d</string>
+    <string name="version_failed">Request to \'%s\' failed. %s.</string>
+    <string name="wronguserpw">There is no user with this username and password</string>
+    <string name="create_client_title">Client Name</string>
+    <string name="create_client_message">Choose a name for your session</string>
+    <string name="create">Create</string>
+    <string name="create_client_failed">Create client failed</string>
+    <string name="created_client">Created client</string>
+    <string name="title_activity_logs">Logs</string>
+    <string name="retry">Réessayer</string>
+    <string name="oops">Oops</string>
+    <string name="not_available">Cannot connect to %s</string>
+    <string name="auth_failed">Server returned 401 unauthorized while trying to get current user. This can be caused by deleting the client for this session.</string>
+    <string name="other_error">Could not get current user. Server (%s) responded with code %d: body (first 200 chars): %s</string>
+    <string name="websocket_failed">Connection failed, trying again in %d minutes</string>
+    <string name="websocket_closed">WebSocket closed; The client-token could be invalidated, please re-login</string>
+    <string name="grouped_message">Received %d messages while being disconnected</string>
+    <string name="delete_all">Delete all</string>
+    <string name="delete_logs">Delete logs</string>
+    <string name="copy_logs">Copy logs</string>
+    <string name="logs_copied">Logs copied</string>
+    <string name="snackbar_deleted">Message deleted</string>
+    <string name="snackbar_undo">Undo</string>
+    <string name="all_messages">All Messages</string>
+    <string name="logs">Logs</string>
+    <string name="message_image_desc">The image of a message</string>
+    <string name="delete_message">Delete message</string>
+    <string name="yavin_notif_server_url">https://push.yavin.com</string>
+    <string name="username">Username</string>
+    <string name="disabled_validate_ssl">Disable SSL Validation</string>
+    <string name="select_ca_certificate">Select CA Certificate</string>
+    <string name="select_ca_file">Select a Certificate File</string>
+    <string name="please_install_file_browser">Please install a file browser</string>
+    <string name="select_ca_failed">Failed to read CA: %s</string>
+    <string name="check_url">Check URL</string>
+    <string name="yavin_notif_logo">Yavin Notif logo</string>
+    <string name="refresh_all">Refresh all</string>
+    <string name="logout_confirm">Do you really want to logout?</string>
+    <string name="yes">yes</string>
+    <string name="missed_messages">Missed messages</string>
+    <string name="grouped_notification_text">New Messages</string>
+    <string name="websocket_listening">Listening to Yavin API</string>
+    <string name="websocket_could_not_connect">Could not connect %s</string>
+    <string name="websocket_init">Initializing</string>
+    <string name="versions">Yavin Notif/android v%s; Yavin Notif/server v%s</string>
+    <string name="advanced_settings">Advanced Settings</string>
+    <string name="done">Done</string>
+    <string name="no_certificate_selected">No certificate selected</string>
+    <string name="remove_ca_certificate">Remove CA Certificate</string>
+    <string name="warning">Warning</string>
+    <string name="http_warning">Using http is insecure and it\'s recommend to use https instead. Use your favorite search engine to get more information about this topic.</string>
+    <string name="i_understand">I Understand</string>
+    <string name="websocket_no_network">Waiting for network</string>
+    <string name="connection">%s@%s</string>
+    <string name="no_messages_yet">There are no messages, yet.\nSend a message to Yavin Notif\nand it will appear here.</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="settings_appearance">Appearance</string>
+    <string name="setting_theme">Theme</string>
+    <string name="setting_key_theme">theme</string>
+    <string name="push_message">Push message</string>
+    <string name="appListDescription">App:</string>
+    <string name="priorityDescription">Priority:</string>
+    <string name="push_button">Push Message</string>
+    <string name="push_title_hint">Title</string>
+    <string name="push_content_hint">Content</string>
+    <string name="push_priority_hint">Priority</string>
+    <string name="fake_payment">Fake Payment</string>
+    <string name="amount">Amount</string>
+    <string name="local_api">Local Network API</string>
+    <string name="internet_api">Yavin Cloud API</string>
+    <string name="geoloc">Geolocation</string>
+    <string name="about">About</string>
+    <string name="sim_serial_number">SIM number</string>
+    <string name="serial_number">Serial number</string>
+    <string name="version">YavinPay version</string>
+    <string name="environ">Environment</string>
+    <string name="log_report">Send log report</string>
+    <string name="send_ticket_by_sms_or_email">Send the ticket by SMS or email</string>
+    <string name="send_by_sms_or_email">Send by SMS or email</string>
+    <string name="pass">No thanks</string>
+    <string name="reference">Reference</string>
+    <string name="reference_hint">REF-123456</string>
+    <string name="reference_title">Add a reference</string>
+    <string name="remove">Remove</string>
+    <string name="permanent">Permanent</string>
+    <string name="missing_permissions_title">Important permissions missing</string>
+    <string name="please_enable_permissions_manually">Please enable permissions manually, otherwise the app will not work</string>
+    <string name="proceed">Proceed</string>
+    <string name="network_error">Network error</string>
+    <string name="unknown_error">Unknown error</string>
+    <string name="restoflash_invalid_qr">"Error, Invalid Restoflash QR code"</string>
+    <string name="your_sim_number">Your SIM number:%1$s</string>
+    <string name="reference_output">Ref : %1$s</string>
+    <string name="welcome_to_yavin">Welcome to Yavin</string>
+    <string name="lets_go">Let\'s go</string>
+    <string name="connect_ethernet_cable">Connect the Ethernet cable</string>
+    <string name="to_get_started_connect_to_the_internet">To get started, connect to the internet</string>
+    <string name="i_connect_to_wifi">I will connect via Wi-Fi</string>
+    <string name="i_activate_4g_plan">I will activate my 4G plan</string>
+    <string name="congratulations_you_have_internet">Congratulations  🎉\n\nYou are connected to the Internet</string>
+    <string name="multi_operator_4g_unlimited_plan">4G\nMulti-operator plan with unlimited transactions</string>
+    <string name="unlimited_4g_plan_monthly_price">6 € / month</string>
+    <string name="i_activate_4g">I will activate 4G</string>
+    <string name="i_connect_to_wifi_2">I will connect via Wi-Fi</string>
+    <string name="you_can_activate_4g_later">You can activate 4G later from the application</string>
+    <string name="your_sim_number_xxx">Your SIM number:\nXXXXXXXXXXXXXXXXXXXX</string>
+    <string name="send_your_activation_request">Send your activation request with your SIM number to\nhello@yavin.com</string>
+    <string name="welcome_activity_where">WHERE</string>
+    <string name="activate_sim_over_wifi">Activate SIM over Wi-Fi</string>
+    <string name="welcome_screen_return">Return</string>
+    <string name="no_transaction_yet">No transaction yet</string>
+    <string name="history_detail_conecs">CONECS</string>
+    <string name="payment_confirmed">Payment Confirmed</string>
+    <string name="leave_us_a_review">Leave us a review?</string>
+    <string name="pay_and_add_a_tip">Pay {amount} and add a tip of …</string>
+    <string name="no_thanks">No thanks</string>
+    <string name="other_amount">Other amount</string>
+    <string name="a_payment_is_already_in_a_process_warning">Warning: A payment is already in progress, are you sure you want to continue?</string>
+    <string name="no">no</string>
+    <string name="amount_transaction_type">Amount %1$s</string>
+    <string name="language_settings">Language settings</string>
+    <string name="sound_option_pos_no">No sound</string>
+    <string name="sound_option_pos_cat">Cat</string>
+    <string name="sound_option_pos_drum">Drum</string>
+    <string name="sound_option_pos_lightsaber">Lightsaber</string>
+    <string name="sound_option_pos_money">Money</string>
+    <string name="midnight">Midnight</string>
+    <string name="yavin_pay_login" />
+
+    <string name="functionalities">Functionalities</string>
+    <string name="language_french">French</string>
+    <string name="language_english">English</string>
+
+    <string name="home_screen">Home Screen</string>
+
+    <string name="animation_enter_amount">Enter an amount</string>
+    <string name="animation_newton_pendulum">Newton Pendulum</string>
+    <string name="animation_hourglass">Hourglass</string>
+    <string name="animation_baby_yoda">Baby Yoda</string>
+
+    <string name="home_screen_view">Home screen view</string>
+    <string name="postpay_screen_view">Postpay screen view</string>
+    <string name="empty_screen">Empty Screen</string>
+
+    <string name="connected_yavin_api">Connected to Yavin API</string>
+    <string name="show_keyboard">Show keyboard</string>
+    <string name="christmas">Merry Christmas</string>
+    <string name="confirmation">Confirmation</string>
+    <string name="important">IMPORTANT</string>
+    <string name="login_as_confirmation">Confirm that you are the company:\n%1$s ?</string>
+    <string name="login_as_confirmation_info">The payments will be made to the company %1$s</string>
+
+    <string name="postpay_timeout_pref_label">Postpay timeout</string>
+    <string name="offline_mode_warning_text">You’re currently offline</string>
+    <string name="secret_menu_screen_label">Hidden settings</string>
+    <string name="refresh_user">Update parameters</string>
+    <string name="refresh_user_done">Parameters have been updated</string>
+
+    <string name="waiting_for_local_network">Waiting for local network</string>
+    <string name="listening_on">Listening on :\n</string>
+    <string name="failed_send_sms">Failed to send SMS</string>
+    <string name="invalid_phone_number">Invalid phone number</string>
+    <string name="phone_number_input_hint">Your phone number</string>
+
+    <string name="onboarding_next">Next</string>
+    <string name="onboarding_previous">Previous</string>
+    <string name="onboarding_hello">Hello %1$s</string>
+    <string name="onboarding_welcome">Welcome on Yavin </string>
+    <string name="onboarding_update">We have just updated your YavinPAY</string>
+    <string name="onboarding_update_functionality">The latest features available to you are:</string>
+    <string name="onboarding_want_to_know_more">Would you like to know more about our Premium options? :</string>
+    <string name="onboarding_activate_tips">the tips</string>
+    <string name="onboarding_activate_ratings">the ratings on google</string>
+    <string name="onboarding_activate_support">Directly from my.yavin.com or by contacting the support team support@yavin.com</string>
+    <string name="onboarding_activate_wifi">activate</string>
+    <string name="onboarding_activate_yavin_presentation">The modern in-store payment solution</string>
+    <string name="onboarding_call_me_back">Call me back</string>
+    <string name="onboarding_call_me_back_response">Your request has been taken into account</string>
+
+    <string name="history_start_date">Start date</string>
+    <string name="history_start_time">Start time</string>
+    <string name="history_end_date">End date</string>
+    <string name="history_end_time">End time</string>
+
+    <string name="total_of">Total of</string>
+    <string name="total_selection">Total selection</string>
+    <string name="provided_by_yavin">Supplied with &lt;3 by Yavin</string>
+    <string name="more_details_by">More details on:</string>
+    <string name="yavin_website_url">https://my.yavin.com</string>
+
+    <string name="login_error_payment">Connection error on the payment server. Please contact the support team: %s</string>
+    <string name="login_error_company_name">The company name is missing. Please contact the support team: %s</string>
+    <string name="login_error_general">The YavinPAY app cannot work on this device. Please contact the support team: %s</string>
+    <string name="postpay_disabled_view">None</string>
+    <string name="postpay_print_view">Print view</string>
+    <string name="postpay_rating_view">Rating view</string>
+
+    <string name="amount_to_pay" translatable="false">0,00 €</string>
+    <string name="_0" translatable="false">0</string>
+    <string name="_1" translatable="false">1</string>
+    <string name="_2" translatable="false">2</string>
+    <string name="_3" translatable="false">3</string>
+    <string name="_4" translatable="false">4</string>
+    <string name="_5" translatable="false">5</string>
+    <string name="_6" translatable="false">6</string>
+    <string name="_7" translatable="false">7</string>
+    <string name="_8" translatable="false">8</string>
+    <string name="_9" translatable="false">9</string>
+</resources>

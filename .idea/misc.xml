@@ -1,5 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.183" />
+        <entry key="app/src/main/res/drawable/ic_account_sync_outline.xml" value="0.183" />
+        <entry key="app/src/main/res/drawable/ic_arrow_back_black_24dp.xml" value="0.183" />
+        <entry key="app/src/main/res/drawable/ic_baseline_next_plan_24.xml" value="0.183" />
+        <entry key="app/src/main/res/drawable/ic_build_24px.xml" value="0.183" />
+        <entry key="app/src/main/res/drawable/ic_cancel_24px.xml" value="0.183" />
+        <entry key="app/src/main/res/drawable/ic_error_24px.xml" value="0.183" />
+        <entry key="app/src/main/res/drawable/ic_language_settings.xml" value="0.183" />
+        <entry key="app/src/main/res/drawable/ic_perm_data_setting_24px.xml" value="0.183" />
+        <entry key="app/src/main/res/drawable/ic_settings_24px.xml" value="0.183" />
+        <entry key="app/src/main/res/drawable/ic_subdirectory_arrow_right_24px.xml" value="0.183" />
+        <entry key="app/src/main/res/drawable/ic_volume_up_24px.xml" value="0.183" />
+        <entry key="app/src/main/res/drawable/ic_warning.xml" value="0.183" />
+        <entry key="app/src/main/res/drawable/ic_watch.xml" value="0.183" />
+        <entry key="app/src/main/res/drawable/ic_wifi_24px.xml" value="0.183" />
+        <entry key="app/src/main/res/drawable/ic_yard_black_24dp.xml" value="0.183" />
+        <entry key="app/src/main/res/drawable/shape_circle_light_primary.xml" value="0.183" />
+        <entry key="app/src/main/res/drawable/shape_white_rounded_corner.xml" value="0.183" />
+        <entry key="app/src/main/res/drawable/side_nav_bar.xml" value="0.183" />
+        <entry key="app/src/main/res/drawable/ticket_print_background.xml" value="0.183" />
+        <entry key="app/src/main/res/layout/terminal_row_item_layout.xml" value="0.45" />
+      </map>
+    </option>
+  </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />

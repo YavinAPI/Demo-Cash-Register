@@ -11,6 +11,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
+import androidx.navigation.findNavController
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.yavin.cashregister.R
 import com.yavin.cashregister.databinding.FragmentHomeBinding
@@ -131,7 +132,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         homeViewModel.handleUserAddNumber(number.toInt())
     }
 
-    fun clickPayButton(btn: Button? = null) {
+    private fun clickPayButton(btn: Button? = null) {
         tmpChangeButtonColor(btn)
 
         homeViewModel.sumValueFormattedData.value?.let {
@@ -148,6 +149,12 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                     transactionCount = homeViewModel.getTransactionCount()
                 )
                 paymentLauncher.launch(paymentResultRequest)*/
+
+                val args = Bundle()
+                args.putString("amount", homeViewModel.getSumValueForPaymentActivity())
+
+                val navController = requireActivity().findNavController(R.id.nav_host_fragment)
+                navController.navigate(R.id.selectTerminalFragment, args)
             }
         }
     }

@@ -17,5 +17,18 @@
         tools:layout="@layout/fragment_home"
         android:label="HomeFragment" />
 
+    <fragment
+        android:id="@+id/selectTerminalFragment"
+        android:name="com.yavin.cashregister.view.ui.SelectTerminalFragment"
+        tools:layout="@layout/select_terminal_screen_layout"
+        android:label="SelectTerminalFragment" />
+
+    <fragment
+        android:id="@+id/paymentFragment"
+        android:name="com.yavin.cashregister.view.ui.PaymentFragment"
+        android:label="PaymentFragment"
+        tools:layout="@layout/fragment_payment"
+    />
+
 
 </navigation>

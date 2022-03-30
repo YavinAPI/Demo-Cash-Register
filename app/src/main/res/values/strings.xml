@@ -310,5 +310,9 @@
     <string name="_9" translatable="false">9</string>
 
     <string name="select_a_terminal">Select a terminal</string>
+    <string name="payment_in_progress">Payment in progress</string>
+    <string name="payment_succeeded">Payment succeeded</string>
+    <string name="payment_failed">Payment failed</string>
+
 
 </resources>

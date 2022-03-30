@@ -4,8 +4,10 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.findNavController
 import com.yavin.cashregister.R
 import com.yavin.cashregister.databinding.SelectTerminalScreenLayoutBinding
+import com.yavin.cashregister.service.model.PaymentInitiativeData
 import com.yavin.cashregister.service.model.TerminalServiceDTO
 import com.yavin.cashregister.view.adapter.TerminalsAdapter
 import com.yavin.cashregister.viewmodel.MainViewModel
@@ -32,7 +34,16 @@ class SelectTerminalFragment : Fragment(R.layout.select_terminal_screen_layout) 
 
     private fun adapterOnClick(terminalData: TerminalServiceDTO) {
         println("Connect to the terminal")
-        sharedMainViewModel.sendSimplePayment(terminalData.host, "002")
+
+        val amount = arguments?.getString("amount")
+        amount?.let {
+            val bundle = Bundle()
+            bundle.putSerializable(PaymentFragment.INIT_PARAMS_OBJECT_NAME, PaymentInitiativeData(terminalData.host, amount))
+
+            val navController = requireActivity().findNavController(R.id.nav_host_fragment)
+            navController.navigate(R.id.paymentFragment, bundle)
+        }
+
     }
 
 }

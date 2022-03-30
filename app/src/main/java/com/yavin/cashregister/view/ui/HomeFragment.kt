@@ -15,6 +15,7 @@ import androidx.navigation.findNavController
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.yavin.cashregister.R
 import com.yavin.cashregister.databinding.FragmentHomeBinding
+import com.yavin.cashregister.service.model.PaymentInitiativeData
 import com.yavin.cashregister.viewmodel.HomeViewModel
 import com.yavin.cashregister.viewmodel.MainViewModel
 import com.yavin.macewindu.logging.ILogger
@@ -36,15 +37,11 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
     private val sharedMainViewModel: MainViewModel by activityViewModels()
     private var clearSumAndReferenceOnLeaveFragment: Boolean = false
-
     private val homeViewModel: HomeViewModel by viewModels()
-
     private lateinit var loginConfirmationDialog: BottomSheetDialog
 
     @Inject
     lateinit var logger: ILogger
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -121,7 +118,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         _binding = null
     }
 
-    fun addNumber(text: TextView?, number: String, btn: Button? = null) {
+    private fun addNumber(text: TextView?, number: String, btn: Button? = null) {
         logger.d("Add Number", number)
         tmpChangeButtonColor(btn)
 
@@ -140,15 +137,6 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             if (homeViewModel.sumValueDouble > 0.0) {
 
                 clearSumAndReferenceOnLeaveFragment = true
-
-                /*val paymentResultRequest = PaymentResultRequest(
-                    sumValue = homeViewModel.getSumValueForPaymentActivity(),
-                    reference = homeViewModel.getValidateReference(),
-                    transactionType = App.sp.getTransactionType().type,
-                    callingActivity = "HomeFragment clickPayButton",
-                    transactionCount = homeViewModel.getTransactionCount()
-                )
-                paymentLauncher.launch(paymentResultRequest)*/
 
                 val args = Bundle()
                 args.putString("amount", homeViewModel.getSumValueForPaymentActivity())

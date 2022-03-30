@@ -6,23 +6,21 @@
     android:layout_height="match_parent">
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="@string/main_menu_header"
-        android:textColor="#0a66bb"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+    <ImageView
+        android:id="@+id/main_menu_yavin_logo"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/yavin_big_logo"
+        app:layout_constraintBottom_toTopOf="@+id/main_menu_search_btn"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
 
     <Button
         android:id="@+id/main_menu_search_btn"
         android:layout_width="200dp"
-        android:layout_height="50dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="15dp"
         android:backgroundTint="#0097c4"
         android:text="@string/main_menu_bind_terminal"
         app:layout_constraintBottom_toTopOf="@+id/main_menu_vertical_guideline"
@@ -32,8 +30,8 @@
     <Button
         android:id="@+id/main_new_payment_btn"
         android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="20dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="15dp"
         android:backgroundTint="#0097c4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

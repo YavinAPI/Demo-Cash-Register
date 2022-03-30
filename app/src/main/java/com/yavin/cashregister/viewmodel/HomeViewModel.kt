@@ -1,10 +1,9 @@
 package com.yavin.cashregister.viewmodel
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import android.app.Application
+import androidx.lifecycle.*
 import com.yavin.cashregister.extensions.formatToLocaleAndCurrency
+import com.yavin.cashregister.service.repository.TransactionRepository
 import com.yavin.macewindu.logging.ILogger
 import com.yavin.macewindu.utils.extensions.addCharAtIndex
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -17,8 +16,9 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-
-) : ViewModel() {
+    application: Application,
+    private val transactionRepository: TransactionRepository,
+) : AndroidViewModel(application) {
 
     @Inject
     lateinit var logger: ILogger

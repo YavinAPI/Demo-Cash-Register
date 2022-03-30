@@ -1,7 +1,12 @@
 package com.yavin.cashregister.service.repository
 
-import javax.inject.Singleton
+import com.yavin.cashregister.network.ApiResponse
+import com.yavin.cashregister.service.model.LocalPaymentResponse
+import kotlinx.coroutines.flow.Flow
 
-@Singleton
-class TransactionRepository {
+
+interface TransactionRepository {
+
+    suspend fun makeSimplePayment(hostIp: String, amountCts: String): Flow<ApiResponse<LocalPaymentResponse>>
+
 }

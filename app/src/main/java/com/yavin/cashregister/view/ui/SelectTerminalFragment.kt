@@ -32,6 +32,7 @@ class SelectTerminalFragment : Fragment(R.layout.select_terminal_screen_layout) 
 
     private fun adapterOnClick(terminalData: TerminalServiceDTO) {
         println("Connect to the terminal")
+        sharedMainViewModel.sendSimplePayment(terminalData.host, "002")
     }
 
 }

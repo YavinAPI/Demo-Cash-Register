@@ -108,5 +108,17 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
+    <Button
+        android:visibility="gone"
+        android:id="@+id/payment_fragment_new_payment_btn"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:text="@string/new_payment"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="30dp"
+
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

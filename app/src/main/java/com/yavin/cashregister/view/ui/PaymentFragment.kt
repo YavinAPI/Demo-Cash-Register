@@ -7,6 +7,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.findNavController
 import com.yavin.cashregister.R
 import com.yavin.cashregister.databinding.FragmentPaymentBinding
 import com.yavin.cashregister.service.model.PaymentInitiativeData
@@ -29,12 +30,17 @@ class PaymentFragment : Fragment(R.layout.fragment_payment) {
         super.onViewCreated(view, savedInstanceState)
         initParams = arguments?.getSerializable(INIT_PARAMS_OBJECT_NAME) as? PaymentInitiativeData
         _binding = FragmentPaymentBinding.bind(view)
+
+        binding.paymentFragmentNewPaymentBtn.setOnClickListener {
+            val navController = requireActivity().findNavController(R.id.nav_host_fragment)
+            navController.navigate(R.id.homeFragment)
+        }
+
         observeState()
 
         initParams?.let {
             paymentViewModel.makeSimplePayment(it.hostIp, it.amountCts)
         }
-
 
     }
 
@@ -46,7 +52,7 @@ class PaymentFragment : Fragment(R.layout.fragment_payment) {
                     binding.paymentProgressBarContainer.visibility = View.GONE
                     binding.paymentFailedContainer.visibility = View.GONE
                     binding.paymentSucceededContainer.visibility = View.GONE
-
+                    binding.paymentFragmentNewPaymentBtn.visibility = View.GONE
 
                     when(uiState){
                         PaymentScreenUiState.Loading ->{
@@ -55,10 +61,12 @@ class PaymentFragment : Fragment(R.layout.fragment_payment) {
 
                         PaymentScreenUiState.Success -> {
                             binding.paymentSucceededContainer.visibility = View.VISIBLE
+                            binding.paymentFragmentNewPaymentBtn.visibility = View.VISIBLE
                         }
 
                         PaymentScreenUiState.Error -> {
                             binding.paymentFailedContainer.visibility = View.VISIBLE
+                            binding.paymentFragmentNewPaymentBtn.visibility = View.VISIBLE
                         }
                     }
                 }

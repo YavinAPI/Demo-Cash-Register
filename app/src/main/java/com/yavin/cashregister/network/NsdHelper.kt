@@ -15,7 +15,6 @@ class NsdHelper {
     companion object {
 
         const val SERVICE_TYPE = "_http._tcp."
-        const val PORT = 16125
 
         @Volatile
         private var instance: NsdHelper? = null

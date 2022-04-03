@@ -48,10 +48,10 @@
             android:ems="10"
             android:enabled="false"
             android:inputType="none"
-            android:text="@string/transaction_type"
+            android:text="@string/cash_register_app_screen_name"
             android:textAlignment="center"
             android:textColor="@android:color/black"
-            android:textSize="24sp" />
+            android:textSize="26sp" />
 
         <TextView
             android:id="@+id/reference_textview"

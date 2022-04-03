@@ -16,5 +16,4 @@ object ApiFactory {
     fun providesYavinApiService(retrofit: Retrofit): YavinApiService =
         retrofit.create(YavinApiService::class.java)
 
-
 }

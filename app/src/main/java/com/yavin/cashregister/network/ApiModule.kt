@@ -24,18 +24,12 @@ import javax.net.ssl.X509TrustManager
 @InstallIn(SingletonComponent::class)
 object ApiModule {
 
-    fun buildUrl(hostIp:String="", port:String="16125", path: String): String {
-        //GET http://<IP_LOCALE>:16125/localapi/v1/payment/<MONTANT>/
-        return "http://${hostIp}:${port}.localapi/v1/$path"
-    }
-
     @Singleton
     @Provides
     fun providesRetrofit(
             okHttpClient: OkHttpClient,
             gsonConverterFactory: GsonConverterFactory
     ): Retrofit = Retrofit.Builder()
-            //.baseUrl(buildUrl(""))
             .baseUrl("http://yavin.com/")
             .client(okHttpClient)
             .addConverterFactory(ScalarsConverterFactory.create())

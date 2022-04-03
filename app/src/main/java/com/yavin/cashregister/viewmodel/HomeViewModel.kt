@@ -1,14 +1,14 @@
 package com.yavin.cashregister.viewmodel
 
 import android.app.Application
-import androidx.lifecycle.*
-import com.yavin.cashregister.extensions.formatToLocaleAndCurrency
-import com.yavin.cashregister.service.repository.TransactionRepository
+import android.util.Log
+import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import com.yavin.macewindu.logging.ILogger
 import com.yavin.macewindu.utils.extensions.addCharAtIndex
+import com.yavin.macewindu.utils.extensions.formatToLocaleAndCurrency
 import dagger.hilt.android.lifecycle.HiltViewModel
-
-import kotlinx.coroutines.launch
 import java.text.DecimalFormat
 import java.text.NumberFormat
 import java.util.*
@@ -17,32 +17,15 @@ import javax.inject.Inject
 @HiltViewModel
 class HomeViewModel @Inject constructor(
     application: Application,
-    private val transactionRepository: TransactionRepository,
 ) : AndroidViewModel(application) {
 
     @Inject
     lateinit var logger: ILogger
-
     private val logName = this::class.java.simpleName
     private val decimalSeparator: String by lazy {
         val numberFormat = NumberFormat.getCurrencyInstance() as? DecimalFormat
         numberFormat?.decimalFormatSymbols?.decimalSeparator?.toString() ?: ","
     }
-
-    private var _validateReferenceLiveData: MutableLiveData<String> = MutableLiveData()
-    val validateReferenceLiveData: LiveData<String> = _validateReferenceLiveData
-
-    private var _transactionCountLiveData: MutableLiveData<Long> = MutableLiveData()
-
-    fun setValidateReferenceValue(value: String) {
-        _validateReferenceLiveData.value = value
-    }
-
-    fun getValidateReference(): String = _validateReferenceLiveData.value ?: ""
-
-    fun getTransactionCount() = _transactionCountLiveData.value
-
-
     var sumValueDouble: Double = 0.0
     private var sumValueString: String = formatToLocaleAndCurrency(sumValueDouble)
 
@@ -82,14 +65,13 @@ class HomeViewModel @Inject constructor(
             sumValueString = formatToLocaleAndCurrency(amount = sumValueDouble)
             _sumValueFormattedData.postValue(sumValueString)
         } catch (exception: Exception) {
-            logger.e(
+            Log.e(
                 logName,
                 "handleUserDeleteNumber thrown an exception : ${exception.stackTraceToString()}"
             )
             exception.printStackTrace()
         }
     }
-
 
     fun handleUserClearAmount() {
         try {
@@ -109,7 +91,6 @@ class HomeViewModel @Inject constructor(
 
     fun getSumValueForPaymentActivity(): String {
         var result = ""
-
         try {
             result =
                 String.format(Locale.getDefault(), "%.2f", sumValueDouble)
@@ -121,9 +102,7 @@ class HomeViewModel @Inject constructor(
             )
             e.printStackTrace()
         }
-
         return result
     }
-
 }
 

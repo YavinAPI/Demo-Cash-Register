@@ -7,6 +7,9 @@ import kotlinx.coroutines.flow.Flow
 
 interface TransactionRepository {
 
-    suspend fun makeSimplePayment(hostIp: String, amountCts: String): Flow<ApiResponse<LocalPaymentResponse>>
+    suspend fun makeSimplePayment(
+        hostIp: String,
+        amountCts: String
+    ): Flow<ApiResponse<LocalPaymentResponse>>
 
 }

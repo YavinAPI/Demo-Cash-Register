@@ -9,44 +9,22 @@ import android.widget.ImageButton
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
-import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.yavin.cashregister.R
 import com.yavin.cashregister.databinding.FragmentHomeBinding
-import com.yavin.cashregister.service.model.PaymentInitiativeData
 import com.yavin.cashregister.viewmodel.HomeViewModel
-import com.yavin.cashregister.viewmodel.MainViewModel
-import com.yavin.macewindu.logging.ILogger
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class HomeFragment : Fragment(R.layout.fragment_home) {
-
-    companion object {
-        const val TRANSACTION_COUNT = "transactionCount"
-    }
-
-    private val logName = this::class.java.simpleName
 
     private var _binding: FragmentHomeBinding? = null
     private val binding
         get() = _binding!!
 
-    private val sharedMainViewModel: MainViewModel by activityViewModels()
     private var clearSumAndReferenceOnLeaveFragment: Boolean = false
     private val homeViewModel: HomeViewModel by viewModels()
-    private lateinit var loginConfirmationDialog: BottomSheetDialog
-
-    @Inject
-    lateinit var logger: ILogger
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -83,19 +61,6 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
         }
 
-        homeViewModel.validateReferenceLiveData.observe(viewLifecycleOwner) { referenceNullable ->
-            referenceNullable?.let { referenceNotNull ->
-                if (referenceNotNull.isNotEmpty()) {
-                    binding.referenceTextview.text =
-                        getString(R.string.reference_output, referenceNotNull)
-                } else {
-                    binding.referenceTextview.text = referenceNotNull
-                }
-
-                binding.addReference.setText(referenceNotNull)
-            }
-        }
-
         homeViewModel.sumValueFormattedData.observe(viewLifecycleOwner) {
             it?.let { sumValueFormatted ->
                 binding.sum.text = sumValueFormatted
@@ -107,7 +72,6 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     override fun onStop() {
         if (clearSumAndReferenceOnLeaveFragment) {
             homeViewModel.handleUserClearAmount()
-            homeViewModel.setValidateReferenceValue("")
             clearSumAndReferenceOnLeaveFragment = false
         }
         super.onStop()
@@ -119,13 +83,10 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     }
 
     private fun addNumber(text: TextView?, number: String, btn: Button? = null) {
-        logger.d("Add Number", number)
         tmpChangeButtonColor(btn)
-
         if (text == null) {
             return
         }
-
         homeViewModel.handleUserAddNumber(number.toInt())
     }
 
@@ -147,7 +108,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         }
     }
 
-    fun clickDelButton(text: TextView?, btn: ImageButton? = null) {
+    private fun clickDelButton(text: TextView?, btn: ImageButton? = null) {
         tmpChangeButtonColor(btn)
         if (text == null) {
             return

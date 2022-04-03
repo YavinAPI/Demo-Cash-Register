@@ -8,8 +8,6 @@ import retrofit2.http.Url
 
 interface YavinApiService {
 
-    // GET http://<IP_LOCALE>:16125/localapi/v1/payment/<MONTANT>/
-    //@GET("localapi/v1/payment/{amountCts}")
     @GET
     suspend fun makeSimplePayment(
         @Url url: String

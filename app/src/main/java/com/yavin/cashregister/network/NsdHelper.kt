@@ -6,6 +6,7 @@ import android.net.nsd.NsdServiceInfo
 import android.util.Log
 import com.yavin.cashregister.service.model.TerminalServiceDTO
 import com.yavin.cashregister.view.callback.IDeviceDiscoveryListener
+import java.util.Collections.addAll
 
 
 class NsdHelper {
@@ -30,7 +31,7 @@ class NsdHelper {
     private var mServiceName: String = "yavin"
     private var mService: NsdServiceInfo? = null
     private var listeners: ArrayList<IDeviceDiscoveryListener> = arrayListOf()
-    private var resolvedTerminals:ArrayList<TerminalServiceDTO> = arrayListOf()
+    private var resolvedTerminals: ArrayList<TerminalServiceDTO> = arrayListOf()
 
 
     private val resolveListener = object : NsdManager.ResolveListener {
@@ -42,14 +43,25 @@ class NsdHelper {
             Log.e(logName, "Resolve Succeeded. $serviceInfo")
 
             serviceInfo.host.hostAddress?.let { hostAddress ->
-                addTerminalToList(TerminalServiceDTO(hostAddress, serviceInfo.port, serviceInfo.serviceName))
+                addTerminalToList(
+                    TerminalServiceDTO(
+                        hostAddress,
+                        serviceInfo.port,
+                        serviceInfo.serviceName
+                    )
+                )
             }
 
         }
     }
 
-    private fun addTerminalToList(terminalDTO:TerminalServiceDTO){
-        if(!resolvedTerminals.contains(terminalDTO)){
+    private fun addTerminalToList(terminalDTO: TerminalServiceDTO) {
+
+        val isDuplicate = resolvedTerminals.find {
+            it.host == terminalDTO.host
+        } != null
+
+        if (!isDuplicate) {
             resolvedTerminals.add(terminalDTO)
             notifyListeners()
         }
@@ -107,7 +119,7 @@ class NsdHelper {
             nsdManager = (appContext.getSystemService(Context.NSD_SERVICE) as NsdManager).apply {
                 discoverServices(SERVICE_TYPE, NsdManager.PROTOCOL_DNS_SD, discoveryListener)
             }
-        }catch (exception:Exception){
+        } catch (exception: Exception) {
             exception.printStackTrace()
         }
     }
@@ -117,20 +129,20 @@ class NsdHelper {
             nsdManager?.stopServiceDiscovery(discoveryListener)
             resolvedTerminals = arrayListOf()
             notifyListeners()
-        }catch (exception:Exception){
+        } catch (exception: Exception) {
             exception.printStackTrace()
         }
     }
 
-    fun addListener(newListener:IDeviceDiscoveryListener){
+    fun addListener(newListener: IDeviceDiscoveryListener) {
         if (!listeners.contains(newListener)) {
             listeners.add(newListener)
             newListener.onDeviceListChanged(resolvedTerminals)
         }
     }
 
-    fun removeListener(listener:IDeviceDiscoveryListener){
-        if(listeners.contains(listener)){
+    fun removeListener(listener: IDeviceDiscoveryListener) {
+        if (listeners.contains(listener)) {
             listeners.remove(listener)
         }
     }

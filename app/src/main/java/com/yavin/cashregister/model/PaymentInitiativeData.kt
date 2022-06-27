@@ -1,4 +1,4 @@
-package com.yavin.cashregister.service.model
+package com.yavin.cashregister.model
 
 import java.io.Serializable
 

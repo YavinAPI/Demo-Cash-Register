@@ -3,15 +3,22 @@ package com.yavin.cashregister.view.ui
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import com.yavin.cashregister.R
+import com.yavin.cashregister.model.TerminalServiceDTO
 import com.yavin.cashregister.network.NsdHelper
-import com.yavin.cashregister.service.model.TerminalServiceDTO
 import com.yavin.cashregister.view.callback.IDeviceDiscoveryListener
 import com.yavin.cashregister.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity(), IDeviceDiscoveryListener {
+
+    @Inject
+    lateinit var networkServiceDiscoveryHelper: NsdHelper
 
     private val sharedMainViewModel: MainViewModel by viewModels()
 
@@ -22,23 +29,23 @@ class MainActivity : AppCompatActivity(), IDeviceDiscoveryListener {
 
     override fun onResume() {
         super.onResume()
-        NsdHelper.getInstance().addListener(this)
-        NsdHelper.getInstance().startDiscover(applicationContext)
+        networkServiceDiscoveryHelper.startDiscovery(this)
     }
 
     override fun onPause() {
-        NsdHelper.getInstance().removeListener(this)
-        NsdHelper.getInstance().stopDiscover()
+        networkServiceDiscoveryHelper.stopDiscovery()
         super.onPause()
     }
 
-    override fun onDestroy() {
-        NsdHelper.getInstance().removeListener(this)
-        NsdHelper.getInstance().stopDiscover()
-        super.onDestroy()
+    override fun onDeviceDiscovered(terminalServiceDTO: TerminalServiceDTO) {
+        lifecycleScope.launch(Dispatchers.Main) {
+            sharedMainViewModel.onDeviceDiscovered(terminalServiceDTO)
+        }
     }
 
-    override fun onDeviceListChanged(devices: List<TerminalServiceDTO>) {
-        sharedMainViewModel.updateListOfTerminals(devices)
+    override fun onDeviceLost(terminalServiceDTO: TerminalServiceDTO) {
+        lifecycleScope.launch(Dispatchers.Main) {
+            sharedMainViewModel.onDeviceLost(terminalServiceDTO)
+        }
     }
 }

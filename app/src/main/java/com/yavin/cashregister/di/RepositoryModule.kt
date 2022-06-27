@@ -1,7 +1,7 @@
-package com.yavin.macewindu.di
+package com.yavin.cashregister.di
 
-import com.yavin.cashregister.service.repository.TransactionRepository
-import com.yavin.cashregister.service.repository.TransactionRepositoryImpl
+import com.yavin.cashregister.repository.TransactionRepository
+import com.yavin.cashregister.repository.TransactionRepositoryImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

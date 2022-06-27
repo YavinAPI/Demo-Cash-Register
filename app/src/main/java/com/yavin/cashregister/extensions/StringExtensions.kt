@@ -1,4 +1,4 @@
-package com.yavin.macewindu.utils.extensions
+package com.yavin.cashregister.extensions
 
 import java.text.NumberFormat
 import java.util.*

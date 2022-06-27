@@ -4,7 +4,7 @@ import android.content.Context
 import android.util.Log
 import com.google.gson.Gson
 import com.yavin.cashregister.R
-import com.yavin.cashregister.service.model.ApiError
+import com.yavin.cashregister.model.ApiError
 
 
 sealed class ApiResponse<out T> {

@@ -1,7 +1,7 @@
-package com.yavin.macewindu.di
+package com.yavin.cashregister.di
 
-import com.yavin.macewindu.logging.ILogger
-import com.yavin.macewindu.logging.YLogger
+import com.yavin.cashregister.logging.ILogger
+import com.yavin.cashregister.logging.YLogger
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

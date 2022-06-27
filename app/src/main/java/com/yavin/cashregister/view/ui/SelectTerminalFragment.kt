@@ -7,8 +7,8 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
 import com.yavin.cashregister.R
 import com.yavin.cashregister.databinding.SelectTerminalScreenLayoutBinding
-import com.yavin.cashregister.service.model.PaymentInitiativeData
-import com.yavin.cashregister.service.model.TerminalServiceDTO
+import com.yavin.cashregister.model.PaymentInitiativeData
+import com.yavin.cashregister.model.TerminalServiceDTO
 import com.yavin.cashregister.view.adapter.TerminalsAdapter
 import com.yavin.cashregister.viewmodel.MainViewModel
 

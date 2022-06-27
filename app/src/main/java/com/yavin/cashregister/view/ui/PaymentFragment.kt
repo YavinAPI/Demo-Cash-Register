@@ -10,8 +10,8 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.findNavController
 import com.yavin.cashregister.R
 import com.yavin.cashregister.databinding.FragmentPaymentBinding
-import com.yavin.cashregister.service.model.PaymentInitiativeData
-import com.yavin.cashregister.service.model.PaymentScreenUiState
+import com.yavin.cashregister.model.PaymentInitiativeData
+import com.yavin.cashregister.model.PaymentScreenUiState
 import com.yavin.cashregister.viewmodel.PaymentViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -33,6 +33,7 @@ class PaymentFragment : Fragment(R.layout.fragment_payment) {
 
         binding.paymentFragmentNewPaymentBtn.setOnClickListener {
             val navController = requireActivity().findNavController(R.id.nav_host_fragment)
+            navController.popBackStack()
             navController.navigate(R.id.homeFragment)
         }
 

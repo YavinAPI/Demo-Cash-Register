@@ -5,9 +5,9 @@ import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.yavin.macewindu.logging.ILogger
-import com.yavin.macewindu.utils.extensions.addCharAtIndex
-import com.yavin.macewindu.utils.extensions.formatToLocaleAndCurrency
+import com.yavin.cashregister.logging.ILogger
+import com.yavin.cashregister.extensions.addCharAtIndex
+import com.yavin.cashregister.extensions.formatToLocaleAndCurrency
 import dagger.hilt.android.lifecycle.HiltViewModel
 import java.text.DecimalFormat
 import java.text.NumberFormat

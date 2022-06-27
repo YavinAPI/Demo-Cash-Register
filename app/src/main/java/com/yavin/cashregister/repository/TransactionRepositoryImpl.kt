@@ -1,10 +1,10 @@
-package com.yavin.cashregister.service.repository
+package com.yavin.cashregister.repository
 
 import android.content.Context
 import com.yavin.cashregister.network.ApiResponse
 import com.yavin.cashregister.network.YavinApiService
-import com.yavin.cashregister.service.model.LocalPaymentResponse
-import com.yavin.macewindu.logging.ILogger
+import com.yavin.cashregister.model.LocalPaymentResponse
+import com.yavin.cashregister.logging.ILogger
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
@@ -29,7 +29,7 @@ class TransactionRepositoryImpl @Inject constructor(
     ): Flow<ApiResponse<LocalPaymentResponse>> {
         return flow {
             try {
-                val requestURL = "http://${hostIp}:16125/localapi/v1/payment/$amountCts/"
+                val requestURL = "http://${hostIp}:16125/localapi/v4/payment/$amountCts"
                 val response = yavinApi.makeSimplePayment(requestURL)
                 val paymentSucceeded = response.body()?.status == "ok"
                 val responseBody = response.body()
@@ -39,11 +39,12 @@ class TransactionRepositoryImpl @Inject constructor(
                     if (paymentSucceeded && responseBody != null) {
                         emit(ApiResponse.SUCCESS(responseBody))
                     } else {
+                        val error = response.errorBody()?.string()
                         emit(
                             ApiResponse.toError(
                                 context,
                                 ApiResponse.ErrorType.SERVER_ERROR,
-                                "payment failed(status=ko)"
+                                error
                             )
                         )
                     }
@@ -69,6 +70,4 @@ class TransactionRepositoryImpl @Inject constructor(
             }
         }.flowOn(Dispatchers.IO)
     }
-
-
 }

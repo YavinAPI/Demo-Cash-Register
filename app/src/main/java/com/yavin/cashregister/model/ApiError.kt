@@ -1,4 +1,4 @@
-package com.yavin.cashregister.service.model
+package com.yavin.cashregister.model
 
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable

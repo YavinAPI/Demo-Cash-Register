@@ -1,6 +1,7 @@
-package com.yavin.macewindu.logging
+package com.yavin.cashregister.logging
 
 import android.util.Log
+import com.yavin.cashregister.logging.ILogger
 import javax.inject.Inject
 
 

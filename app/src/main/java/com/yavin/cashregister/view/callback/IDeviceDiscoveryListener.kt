@@ -1,7 +1,8 @@
 package com.yavin.cashregister.view.callback
 
-import com.yavin.cashregister.service.model.TerminalServiceDTO
+import com.yavin.cashregister.model.TerminalServiceDTO
 
 interface IDeviceDiscoveryListener {
-    fun onDeviceListChanged(devices: List<TerminalServiceDTO>)
+    fun onDeviceDiscovered(terminalServiceDTO: TerminalServiceDTO)
+    fun onDeviceLost(terminalServiceDTO: TerminalServiceDTO)
 }

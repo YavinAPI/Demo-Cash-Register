@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.yavin.cashregister.R
-import com.yavin.cashregister.service.model.TerminalServiceDTO
+import com.yavin.cashregister.model.TerminalServiceDTO
 import java.lang.Exception
 
 class TerminalsAdapter(private val onClick: (TerminalServiceDTO) -> Unit) :

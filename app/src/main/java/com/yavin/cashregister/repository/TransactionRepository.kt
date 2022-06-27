@@ -1,7 +1,7 @@
-package com.yavin.cashregister.service.repository
+package com.yavin.cashregister.repository
 
 import com.yavin.cashregister.network.ApiResponse
-import com.yavin.cashregister.service.model.LocalPaymentResponse
+import com.yavin.cashregister.model.LocalPaymentResponse
 import kotlinx.coroutines.flow.Flow
 
 

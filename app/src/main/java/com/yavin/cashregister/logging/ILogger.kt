@@ -1,4 +1,4 @@
-package com.yavin.macewindu.logging
+package com.yavin.cashregister.logging
 
 interface ILogger {
     fun d(tag: String, message: String)

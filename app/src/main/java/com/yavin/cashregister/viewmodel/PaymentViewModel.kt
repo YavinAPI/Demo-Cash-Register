@@ -4,8 +4,8 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.yavin.cashregister.network.ApiResponse
-import com.yavin.cashregister.service.model.PaymentScreenUiState
-import com.yavin.cashregister.service.repository.TransactionRepository
+import com.yavin.cashregister.model.PaymentScreenUiState
+import com.yavin.cashregister.repository.TransactionRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
